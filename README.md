@@ -39,11 +39,11 @@ requite library:
 ### Note
 
 When you upload the code, please selecte slave mode.
-    <div align=center><img width = 600 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/ROLA.png"/></div>
+    <div align=center><img width = 400 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/ROLA.png"/></div>
 
 Each LoRa device has a unique serial number, after you connect the LoRa device to the Wio terminal then there will display the deveui, appeui and appkey on the first page, you need to fill the LoRa ID and gateway ID in server.
 
-<div align=center><img width = 400 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/temp_ID.png"/></div>
+<div align=center><img width = 600 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/temp_ID.png"/></div>
 
 There are displaying temperature and humidity, also there has the GPS function, but it is not recommended for using in enclosed space in case effect collect satellites.
 
