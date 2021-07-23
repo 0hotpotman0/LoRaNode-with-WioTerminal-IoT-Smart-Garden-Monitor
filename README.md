@@ -36,8 +36,9 @@ requite library:
 - [**TinyGPS**](https://github.com/mikalhart/TinyGPSPlus)
 - [**Grove_Temperature_And_Humidity_Sensor**](https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor)
 
-!!!note
-    When you upload the code, please selecte slave mode.
+### Note
+
+When you upload the code, please selecte slave mode.
     <div align=center><img width = 600 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/ROLA.png"/></div>
 
 Each LoRa device has a unique serial number, after you connect the LoRa device to the Wio terminal then there will display the deveui, appeui and appkey on the first page, you need to fill the LoRa ID and gateway ID in server.
