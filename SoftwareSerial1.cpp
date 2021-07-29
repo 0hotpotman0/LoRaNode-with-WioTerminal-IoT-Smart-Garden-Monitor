@@ -109,7 +109,7 @@ void SoftwareSerial::recv()
     }
     
     // if buffer full, set the overflow flag and return
-    uint8_t next = (_receive_buffer_tail + 1) % _SS_MAX_RX_BUFF;
+    uint16_t next = (_receive_buffer_tail + 1) % _SS_MAX_RX_BUFF;
     if (next != _receive_buffer_head)
     {
       // save new data in buffer: tail points to where byte goes
