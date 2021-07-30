@@ -28,7 +28,7 @@ This demo you will need the device list as below:
 
 ## Usage
 
-This demo is basically sending a frame to the gateway and then transfer to the server(Uplink), after that it will enter waiting for an ACK status. If the RoLa tester does not get the response, it will sent the same frame again until the number of setting. conversely, the ACK obtain the response (Downlink) back to LoRa tester, that mean the message is passed to a backend service, eventually the imformation will display on the Wio terminal screen. 
+This demo is used the Wio Terminal Chassis-LoRa-E5 and GNSS as an IoT device, it is basically sending a frame to the gateway and then transfer to the server(Uplink), in this case, I can bunch other data with the frame to upload, such as GPS, temperature and humidity, you also can bring other sensor data as you want. After the ACK obtain the response(Downlink) back to the LoRa device, meanwhile, the connection status will display on the Wio terminal, which means the message is passed to the backend service and then you can view the data on TheThingsNetwork platform, you also can use other platforms, but the premise is that platform can support the Wio Terminal Chassis-LoRa-E5 and GNSS. 
 
 This project bases using on the Arduino, you need to download the Arduino IDE and some library on your PC, if you are first time use the Wio terminal, here is the [**Wio terminal instruction**](https://wiki.seeedstudio.com/Wio-Terminal-Getting-Started/).
 
