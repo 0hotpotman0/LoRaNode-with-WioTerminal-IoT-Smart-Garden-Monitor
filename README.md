@@ -23,7 +23,7 @@ This demo you will need the device list as below:
 
 - [**Grove - Temperature&Humidity Sensor (DHT11)**](https://www.seeedstudio.com/Grove-Temperature-Humidity-Sensor-DHT1-p-745.html)
 
-- [**WioTerminal LoRaWAN Gateway Tester**]()
+- [**Wio Terminal Chassis - LoRa-E5 and GNSS**](https://www.seeedstudio.com/Wio-Terminal-p-4509.html)
 
 
 ## Usage
