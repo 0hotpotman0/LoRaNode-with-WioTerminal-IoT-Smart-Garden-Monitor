@@ -2,7 +2,7 @@
 
 ## introduction
 
- The Wio terminal RoLa GPS_TEMP demo basic on the RoLa tester to developed, it isn't only just sent an uplink to get the RSSI data, but also can bring with other data such temperature and humidity and GPS data to the getaway, and then show the data on the TTN website.
+The IoT Smart Garden Monitor is used the Wio Terminal Chassis-LoRa-E5 and GNSS as an IoT device, it is basically sending a frame to the gateway and then transfer to the server(Uplink), in this case, I can bunch other data with the frame to upload, such as GPS, temperature and humidity, you also can bring other sensor data as you want. After the ACK obtain the response(Downlink) back to the LoRa device, meanwhile, the connection status will display on the Wio terminal, which means the message is passed to the backend service and then you can view the data on TheThingsNetwork platform, you also can use other platforms, but the premise is that platform can support the Wio Terminal Chassis-LoRa-E5 and GNSS. 
 
   <div align=center><img width = 500 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/%E5%B8%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E5%9C%BA%E6%99%AF%E5%9B%BE.jpg"/></div>
 
@@ -28,7 +28,6 @@ This demo you will need the device list as below:
 
 ## Usage
 
-This demo is used the Wio Terminal Chassis-LoRa-E5 and GNSS as an IoT device, it is basically sending a frame to the gateway and then transfer to the server(Uplink), in this case, I can bunch other data with the frame to upload, such as GPS, temperature and humidity, you also can bring other sensor data as you want. After the ACK obtain the response(Downlink) back to the LoRa device, meanwhile, the connection status will display on the Wio terminal, which means the message is passed to the backend service and then you can view the data on TheThingsNetwork platform, you also can use other platforms, but the premise is that platform can support the Wio Terminal Chassis-LoRa-E5 and GNSS. 
 
 This project bases using on the Arduino, you need to download the Arduino IDE and some library on your PC, if you are first time use the Wio terminal, here is the [**Wio terminal instruction**](https://wiki.seeedstudio.com/Wio-Terminal-Getting-Started/).
 
