@@ -181,9 +181,9 @@ void display_EVI(){
   if (init_ui == 0){
     init_ui = 1;
     tft.setFreeFont(FMO12);
-    tft.fillRect(0, 0, 320, 30, TFT_BLUE);      //Drawing rectangle with blue fill
+    tft.fillRect(0, 0, 320, 30, TFT_DARKGREEN);      //Drawing rectangle with blue fill
     tft.setTextColor(TFT_WHITE);                //Setting text color
-    tft.drawString("GPS & temperature", 35, 5); //Drawing text string
+    tft.drawString("Smart Garden Monitor", 20, 5); //Drawing text string
 
 
     tft.setFreeFont(FM9);
@@ -222,12 +222,12 @@ void refreshGpsInfo(){
     tft.fillRect(HIST_X_OFFSET, HIST_Y_OFFSET, HIST_X_SIZE, HIST_Y_SIZE, TFT_BLACK);
 
     tft.setFreeFont(FMO12);
-    tft.fillRect(0, 0, 320, 30, TFT_BLUE);      //Drawing rectangle with blue fill
+    tft.fillRect(0, 0, 320, 30, TFT_DARKGREEN);      //Drawing rectangle with blue fill
     tft.setTextColor(TFT_WHITE);                //Setting text color
-    tft.drawString("GPS & temperature", 35, 5); //Drawing text string
+    tft.drawString("Smart Garden Monitor", 20, 5); //Drawing text string
     tft.setFreeFont(&FreeMono9pt7b);
-    tft.drawString("Device:", 5, 45);
-    tft.drawString("STATE:", 146, 45);
+    tft.drawString("Device:", 5, 35);
+    tft.drawString("STATE:", 5, 55);
 
     tft.setFreeFont(&FreeMono9pt7b);
     tft.setTextColor(TFT_GREEN);
@@ -237,7 +237,7 @@ void refreshGpsInfo(){
     tft.drawRoundRect(225, 75, 80, 40, 5, TFT_WHITE);
 
     tft.setFreeFont(&FreeSansBoldOblique9pt7b);
-    tft.drawString("C", 120, 85, 1);
+    tft.drawString("`C", 120, 85, 1);
     tft.drawString("%", 280, 85, 1);
 
     tft.setFreeFont(FM9);
@@ -254,7 +254,7 @@ void refreshGpsInfo(){
     tft.drawString("LAT: ", xOffset, yOffset, GFXFF);
     tft.drawString(N_lat, xOffset + 50, yOffset, GFXFF);
     yOffset += 18;
-    tft.drawString("LONG: ", xOffset, yOffset, GFXFF);
+    tft.drawString("LON: ", xOffset, yOffset, GFXFF);
     tft.drawString(N_lng, xOffset + 50, yOffset, GFXFF);
     yOffset += 18;
     tft.drawString("ALT: ", xOffset, yOffset, GFXFF);
@@ -269,28 +269,28 @@ void refreshGpsInfo(){
 
   if (is_exist != P_is_exist || init_ui == 0){
     if (is_exist){
-      tft.fillRect(80, 45, 65, 15, TFT_BLACK);
+      tft.fillRect(80, 35, 80, 15, TFT_BLACK);
       tft.setTextColor(TFT_GREEN);
-      tft.drawString("find", 80, 45, GFXFF);
+      tft.drawString("found", 80, 35, GFXFF);
     }
     else{
-      tft.fillRect(80, 45, 65, 15, TFT_BLACK);
+      tft.fillRect(80, 35, 80, 15, TFT_BLACK);
       tft.setTextColor(TFT_RED);
-      tft.drawString("unfind", 80, 45, GFXFF);
+      tft.drawString("unfound", 80, 35, GFXFF);
     }
     P_is_exist = is_exist;
   }
 
   if (is_join != P_is_join || init_ui == 0){
     if (is_join){
-      tft.fillRect(210, 45, 110, 15, TFT_BLACK);
+      tft.fillRect(75, 55, 130, 15, TFT_BLACK);
       tft.setTextColor(TFT_GREEN);
-      tft.drawString("connected", 210, 45, GFXFF);
+      tft.drawString("connected", 75, 55, GFXFF);
     }
     else{
-      tft.fillRect(210, 45, 110, 15, TFT_BLACK);
+      tft.fillRect(75, 55, 130, 15, TFT_BLACK);
       tft.setTextColor(TFT_RED);
-      tft.drawString("disconnect", 210, 45, GFXFF);
+      tft.drawString("disconnected", 75, 55, GFXFF);
     }
     P_is_join = is_join;
   }

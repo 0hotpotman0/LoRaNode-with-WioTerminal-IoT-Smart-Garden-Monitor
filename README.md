@@ -1,17 +1,17 @@
-# LoRa Node with WioTerminal-IoT Smart Garden Monitor
+# LoRa Node with WioTerminal-IoT Smart Garden Monitor For PlatformIO
 
-## introduction
+## Introduction
 
-The IoT Smart Garden Monitor is used the Wio Terminal Chassis-LoRa-E5 and GNSS as an IoT device, it is basically sending a frame to the gateway and then transfer to the server(Uplink), in this case, I can bunch other data with the frame to upload, such as GPS, temperature and humidity, you also can bring other sensor data as you want. After the ACK obtain the response(Downlink) back to the LoRa device, the connection status will shift to conneted and display on the Wio terminal, which means the message is passed to the backend service and then you can view the data on TheThingsNetwork platform, you also can use other platforms, but the premise is that platform can support the Wio Terminal Chassis-LoRa-E5 and GNSS. 
+The IoT Smart Garden Monitor is used the Wio Terminal Chassis-LoRa-E5 and GNSS as an IoT device, it is basically sending a frame to the gateway and then transfer to the server(Uplink), in this case, I can bunch other data with the frame to upload, such as GPS, temperature and humidity, you also can bring other sensor data as you want. After the ACK obtain the response(Downlink) back to the LoRa device, meanwhile, the connection status will display on the Wio terminal, which means the message is passed to the backend service and then you can view the data on TheThingsNetwork platform, you also can use other platforms, but the premise is that platform can support the Wio Terminal Chassis-LoRa-E5 and GNSS. 
 
   <div align=center><img width = 500 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/%E5%B8%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E5%9C%BA%E6%99%AF%E5%9B%BE.jpg"/></div>
 
  ## Feature
 
- - The LoRa device can display the DevEui, APPEui and Appkey on the first page.
- - it can display the current temperature, humidity and current time.
- - Display longitude, latitude and satellites number.
- - Display the device and TTN connection status.  
+ - LoRa device information such as DevEui, APPEui, Appkey
+ - detecting the current temperature and humidity
+ - GPS position reporting and the current time and satellites number.
+ - Display the device and TTN connection status  
 
 ## Hardware 
 
@@ -28,10 +28,11 @@ This demo you will need the device list as below:
 
 ## Usage
 
-This project is based on the Arduino platform which means we’ll be using the Arduino IDE and various Arduino libraries. If this is your first time using the Wio terminal, here is a guide to quickly [**Get Started with Wio Terminal**](https://wiki.seeedstudio.com/Wio-Terminal-Getting-Started/).
 
+This project bases using on the Arduino, you need to download the Arduino IDE and some library on your PC, if you are first time use the Wio terminal, here is the [**Wio terminal instruction**](https://wiki.seeedstudio.com/Wio-Terminal-Getting-Started/).
 
 requite library:
+- [**Seeed_Arduino_LCD**](https://github.com/Seeed-Studio/Seeed_Arduino_LCD)
 - [**Seeed_Arduino_SFUD**](https://github.com/Seeed-Studio/Seeed_Arduino_SFUD)
 - [**TinyGPS**](https://github.com/mikalhart/TinyGPSPlus)
 - [**Grove_Temperature_And_Humidity_Sensor**](https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor)
@@ -119,6 +120,6 @@ Each LoRa device has a unique serial number, after you connect the LoRa device t
 
 <div align=center><img width = 600 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/temp_ID.png"/></div>
 
-On the second page, there will display temperature, humidity, current time, longitude, latitude and satellites number.
+There are displaying temperature and humidity, also there has the GPS function, but it is not recommended for using in enclosed space in case effect collect satellites.
 
 <div align=center><img width = 600 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/TEMP_GPS_DATA.png"/></div>
