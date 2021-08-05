@@ -2,7 +2,7 @@
 
 ## introduction
 
-The IoT Smart Garden Monitor is used the Wio Terminal Chassis-LoRa-E5 and GNSS as an IoT device, it is basically sending a frame to the gateway and then transfer to the server(Uplink), in this case, I can bunch other data with the frame to upload, such as GPS, temperature and humidity, you also can bring other sensor data as you want. After the ACK obtain the response(Downlink) back to the LoRa device, the connection status will shift to conneted and display on the Wio terminal, which means the message is passed to the backend service and then you can view the data on TheThingsNetwork platform, you also can use other platforms, but the premise is that platform can support the Wio Terminal Chassis-LoRa-E5 and GNSS. 
+The IoT Smart Garden Monitor is basic on Wio Terminal Chassis-LoRa-E5 and GNSS to developed as an IoT device. The operating principle of the IoT Smart Garden Monitor basically sends a frame on-demand to the gateway on a regular basis, then transfers it to the server(Uplink), in the meantime, the frame can bunch other data to upload, such as GPS, temperature and humidity, etc. After the ACK obtain the response(Downlink) back to the LoRa device, the connection status will shift to connected and display on the Wio terminal, which means the message is passed to the backend service and then you can view the data on the TheThingsNetwork platform, you also can use other platforms, but the premise is that platform can support the Wio Terminal Chassis-LoRa-E5 and GNSS. 
 
   <div align=center><img width = 500 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/%E5%B8%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E5%9C%BA%E6%99%AF%E5%9B%BE.jpg"/></div>
 
