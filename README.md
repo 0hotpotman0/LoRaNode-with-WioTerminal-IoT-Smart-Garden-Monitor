@@ -110,11 +110,6 @@ Go to the geteway, then click "Live data".
 <div align=center><img width = 500 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/TTN_dataTEMP1.png"/></div>
 
 
-### Note
-
-When you upload the code, please selecte slave mode.
-    <div align=center><img width = 400 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/ROLA.png"/></div>
-
 Each LoRa device has a unique serial number, after you connect the LoRa device to the Wio terminal then there will display the deveui, appeui and appkey on the first page, you need to fill the LoRa ID and gateway ID in server.
 
 <div align=center><img width = 600 src="https://files.seeedstudio.com/wiki/LoRa_WioTerminal/temp_ID.png"/></div>
