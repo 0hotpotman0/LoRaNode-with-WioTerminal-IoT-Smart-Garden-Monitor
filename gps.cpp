@@ -17,11 +17,19 @@ TinyGPSCustom ExtLat(gps, "GPGGA", 3);  //N for Latitude
 TinyGPSCustom ExtLng(gps, "GPGGA", 5);  //E for Longitude
 
 
-void init_softSerial()
+void GpsSerialInit()
 {
   //初始化软串口通信；
   softSerial1.begin(9600);
   //监听软串口通信
+  NVIC_DisableIRQ(EIC_4_IRQn);
+  NVIC_ClearPendingIRQ(EIC_4_IRQn);
+  NVIC_SetPriority(EIC_4_IRQn, 1);
+  NVIC_EnableIRQ(EIC_4_IRQn);    
+  NVIC_DisableIRQ(EIC_7_IRQn);
+  NVIC_ClearPendingIRQ(EIC_7_IRQn);
+  NVIC_SetPriority(EIC_7_IRQn, 1);
+  NVIC_EnableIRQ(EIC_7_IRQn);
   softSerial1.listen();
 }
 
@@ -32,7 +40,7 @@ void listen()
 }
 
 
-void stopListening()
+void GpsstopListening()
 {
   //bu监听软串口通信
   softSerial1.stopListening();

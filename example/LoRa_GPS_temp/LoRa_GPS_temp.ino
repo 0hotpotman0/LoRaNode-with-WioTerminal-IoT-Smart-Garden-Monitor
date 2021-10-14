@@ -2,8 +2,11 @@
 #include <TFT_eSPI.h> // Hardware-specific library
 #include <SPI.h>
 #include "gps.h"
+#include "SoftwareSerial2.h"
 TFT_eSPI tft = TFT_eSPI();           // Invoke custom library
 TFT_eSprite spr = TFT_eSprite(&tft); // Sprite
+
+SoftwareSerial1 softSerial2(40, 41);
 
 #include "DHT.h"
 #define DHTPIN 0      // what pin we're connected to
@@ -94,7 +97,7 @@ static int at_send_check_response(char *p_ack, int timeout_ms, char *p_cmd, ...)
   va_list args;
   memset(recv_buf, 0, sizeof(recv_buf));
   va_start(args, p_cmd);
-  Serial1.printf(p_cmd, args);
+  softSerial2.printf(p_cmd, args);
   Serial.printf(p_cmd, args);
   va_end(args);
 
@@ -104,9 +107,9 @@ static int at_send_check_response(char *p_ack, int timeout_ms, char *p_cmd, ...)
     return 0;
   }
   do{
-    while (Serial1.available() > 0)
+    while (softSerial2.available() > 0)
     {
-      ch = Serial1.read();
+      ch = softSerial2.read();
       recv_buf[index++] = ch;
       Serial.print((char)ch);
       delay(2);
@@ -129,7 +132,7 @@ static int at_send_check_response_flag(int timeout_ms, char *p_cmd, ...){
   va_list args;
   memset(recv_buf, 0, sizeof(recv_buf));
   va_start(args, p_cmd);
-  Serial1.printf(p_cmd, args);
+  softSerial2.printf(p_cmd, args);
   Serial.printf(p_cmd, args);
   va_end(args);
   return 1;
@@ -152,8 +155,8 @@ static int check_message_response(){
     }
     Lora_is_busy = false;
     init_flag = false;
-    while (Serial1.available() > 0){
-      ch = Serial1.read();
+    while (softSerial2.available() > 0){
+      ch = softSerial2.read();
       recv_buf[index++] = ch;
       Serial.print((char)ch);
       delay(2);
@@ -362,11 +365,13 @@ void setup(void){
   pinMode(WIO_5S_LEFT, INPUT_PULLUP);
   pinMode(WIO_5S_RIGHT, INPUT_PULLUP);
   Serial.begin(115200);
-  //  while (!Serial);
+
   delay(2000);
-  init_softSerial();
-  Serial1.begin(9600);
-  while (!Serial1);
+  GpsSerialInit();
+
+  softSerial2.begin(9600);
+  softSerial2.listen();
+  while (!softSerial2);
   Serial.print("E5 LORAWAN TEST\r\n");
   dht.begin();
   
@@ -381,10 +386,10 @@ void loop(void){
 
   if (tTime > 10 * 1000){
     tTime = 0;
-    stopListening();
+    GpsstopListening();
     temp = dht.readTemperature();
     humi = dht.readHumidity();
-    listen();
+    GpsSerialInit();
     Serial.print("Humidity: ");
     Serial.print(humi);
     Serial.print(" %\t");
